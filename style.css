@@ -20,7 +20,7 @@ section {
     transition: all 1s;
 }
 
-.show {
+.visible-section {
     opacity: 1;
 }
 
