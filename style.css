@@ -2,10 +2,144 @@
 
 body {
     background-color: rgb(13, 17, 23);
-    font-family: 'Poppins', sans-serif;
-    color: #ffffff;
     margin: 0;
-    padding: 0;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: grid;
+}
+
+.container {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+    justify-self: center;
+}
+
+.sun {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+}
+
+.earth,
+.moon,
+.mercure,
+.jupiter,
+.ring {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+
+.earth {
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 36.5s linear infinite;
+}
+
+.mercure {
+    top: 10em;
+    left: 10em;
+    width: 18em;
+    height: 18em;
+    border-color: orange transparent transparent transparent;
+    animation: orbit 60s linear infinite;
+}
+
+.moon {
+    top: 0;
+    right: 0;
+    width: 8em;
+    height: 8em;
+    animation: orbit 2.7s linear infinite;
+}
+
+.jupiter {
+    top: 10;
+    right: 10;
+    width: 40em;
+    height: 40em;
+    border-color: rgb(238, 137, 21) transparent transparent transparent;
+    animation: orbit 100s linear infinite;
+}
+
+.ring {
+    top: 1.8em;
+    right: 1.8em;
+    width: 8em;
+    height: 8em;
+    border: 0.1em solid white;
+    border-radius: 50%;
+    animation: orbit 100s linear infinite;
+}
+
+.earth::before,
+.moon::before,
+.mercure::before,
+.jupiter::before,
+.ring::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+.earth::before {
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background-color: aqua;
+}
+
+.moon::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: silver;
+}
+
+.ring::before {
+    top: 2.6em;
+    right: 2.6em;
+    width: 4em;
+    height: 4em;
+}
+
+.mercure::before {
+    top: 1.5em;
+    right: 1.5em;
+    width: 2em;
+    height: 2em;
+    background-color: orangered;
+}
+
+.jupiter::before {
+    top: 4em;
+    right: 4em;
+    width: 4em;
+    height: 4em;
+    background-color: rgb(238, 137, 21);
+
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 section {
@@ -13,6 +147,22 @@ section {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin-bottom: 20vh;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
 }
 
 .hidden-section {
